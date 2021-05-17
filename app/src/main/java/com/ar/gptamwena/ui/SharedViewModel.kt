@@ -1,4 +1,4 @@
-package com.ar.gptamwena
+package com.ar.gptamwena.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

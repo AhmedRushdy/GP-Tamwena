@@ -1,15 +1,14 @@
-package com.graduationproject.paginationtest.ui.onboarding
+package com.ar.gptamwena.ui.onboarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.graduationproject.paginationtest.databinding.FragmentViewPagerBinding
-import com.graduationproject.paginationtest.ui.onboarding.screens.FirstFragment
-import com.graduationproject.paginationtest.ui.onboarding.screens.SecondFragment
-import com.graduationproject.samples.onboarding.ViewPagerAdapter
-import com.graduationproject.samples.onboarding.screans.ThirdFragment
+import com.ar.gptamwena.databinding.FragmentViewPagerBinding
+import com.ar.gptamwena.ui.onboarding.screens.FirstFragment
+import com.ar.gptamwena.ui.onboarding.screens.SecondFragment
+import com.ar.gptamwena.ui.onboarding.screens.ThirdFragment
 
 class ViewPagerFragment : Fragment() {
     private lateinit var binding: FragmentViewPagerBinding
@@ -21,7 +20,7 @@ class ViewPagerFragment : Fragment() {
     ): View? {
         binding = FragmentViewPagerBinding.inflate(layoutInflater)
         val view = binding.root
-        val fragmentList = arrayListOf<Fragment>(
+        val fragmentList = arrayListOf(
             FirstFragment(), SecondFragment(), ThirdFragment()
         )
 

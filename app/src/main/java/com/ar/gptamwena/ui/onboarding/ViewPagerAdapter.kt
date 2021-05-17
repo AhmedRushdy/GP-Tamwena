@@ -1,4 +1,4 @@
-package com.graduationproject.samples.onboarding
+package com.ar.gptamwena.ui.onboarding
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

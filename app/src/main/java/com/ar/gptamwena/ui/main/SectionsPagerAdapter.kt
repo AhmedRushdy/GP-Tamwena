@@ -1,18 +1,18 @@
-package com.ar.gptamwena
+package com.ar.gptamwena.ui.main
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.marketactivity.ui.main.PlaceholderFragment
-
-private val TAB_TITLES = arrayOf(
-        R.string.tab_text_1,
-        R.string.tab_text_2
-)
+import com.ar.gptamwena.R
 
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
     : FragmentPagerAdapter(fm) {
+
+    private val TAB_TITLES = arrayOf(
+        R.string.tab_text_1,
+        R.string.tab_text_2
+    )
 
     override fun getItem(position: Int): Fragment {
         // getItem is called to instantiate the fragment for the given page.

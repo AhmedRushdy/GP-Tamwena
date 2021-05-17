@@ -1,8 +1,10 @@
-package com.ar.gptamwena
+package com.ar.gptamwena.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
+import com.ar.gptamwena.R
+import com.ar.gptamwena.ui.main.SectionsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {

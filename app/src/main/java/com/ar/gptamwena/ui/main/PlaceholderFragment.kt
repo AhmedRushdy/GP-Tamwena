@@ -1,11 +1,12 @@
-package com.ar.gptamwena
+package com.ar.gptamwena.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.ar.gptamwena.R
+import com.ar.gptamwena.models.PageViewModel
 
 /**
  * A placeholder fragment containing a simple view.

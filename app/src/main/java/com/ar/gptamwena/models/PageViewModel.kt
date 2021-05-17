@@ -1,4 +1,4 @@
-package com.ar.gptamwena
+package com.ar.gptamwena.models
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

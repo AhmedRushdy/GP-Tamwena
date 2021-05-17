@@ -1,11 +1,11 @@
-package com.graduationproject.paginationtest.ui.onboarding.screens
+package com.ar.gptamwena.ui.onboarding.screens
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.graduationproject.paginationtest.R
+import com.ar.gptamwena.R
 
 class SecondFragment : Fragment() {
 

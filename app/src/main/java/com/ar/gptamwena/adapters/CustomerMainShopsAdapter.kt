@@ -1,9 +1,10 @@
-package com.ar.gptamwena
+package com.ar.gptamwena.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.ar.gptamwena.R
 
 class CustomerMainShopsAdapter : RecyclerView.Adapter<CustomerMainShopsAdapter.CVMSViewHolder>() {
     inner class CVMSViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

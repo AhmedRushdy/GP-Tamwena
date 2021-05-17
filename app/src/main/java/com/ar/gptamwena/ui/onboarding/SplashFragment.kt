@@ -1,4 +1,4 @@
-package com.graduationproject.paginationtest.ui.onboarding
+package com.ar.gptamwena.ui.onboarding
 
 import android.content.Context
 import android.content.Intent
@@ -9,8 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.graduationproject.paginationtest.ui.MainActivity2
-import com.graduationproject.paginationtest.R
+import com.ar.gptamwena.ui.MainActivity2
+import com.ar.gptamwena.R
 
 class SplashFragment : Fragment() {
 

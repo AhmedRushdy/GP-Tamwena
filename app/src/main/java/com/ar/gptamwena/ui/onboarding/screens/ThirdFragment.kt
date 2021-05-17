@@ -1,4 +1,4 @@
-package com.graduationproject.samples.onboarding.screans
+package com.ar.gptamwena.ui.onboarding.screens
 
 import android.content.Context
 import android.content.Intent
@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.graduationproject.paginationtest.ui.MainActivity2
-import com.graduationproject.paginationtest.databinding.FragmentThirdBinding
+import com.ar.gptamwena.ui.MainActivity2
+import com.ar.gptamwena.databinding.FragmentThirdBinding
 
 class ThirdFragment : Fragment() {
     lateinit var binding: FragmentThirdBinding
@@ -21,7 +21,7 @@ class ThirdFragment : Fragment() {
 
         binding.finish.setOnClickListener {
             val intent = Intent(requireContext(), MainActivity2::class.java)
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
             onBoardingFinish()
         }

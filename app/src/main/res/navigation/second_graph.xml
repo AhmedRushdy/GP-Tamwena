@@ -4,26 +4,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/second_graph"
-    android:label="seond_graph"
+    android:label="second_graph"
     app:startDestination="@id/nav_home">
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.graduationproject.paginationtest.ui.fragments.HomeFragment"
+        android:name="com.ar.gptamwena.ui.fragments.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/nav_search_for_market"
-        android:name="com.graduationproject.paginationtest.ui.fragments.SearchForMarketFragment"
+        android:name="com.ar.gptamwena.ui.fragments.SearchForMarketFragment"
         android:label="@string/search_for_market"
         tools:layout="@layout/fragment_searching_for_market" />
     <fragment
         android:id="@+id/nav_shopping_history"
-        android:name="com.graduationproject.paginationtest.ui.fragments.ShoppingHistoryFragment"
+        android:name="com.ar.gptamwena.ui.fragments.ShoppingHistoryFragment"
         android:label="@string/shopping_history"
         tools:layout="@layout/fragment_shopinh_history" />
     <fragment
         android:id="@+id/nav_my_account"
-        android:name="com.graduationproject.paginationtest.ui.fragments.MyAccountFragment"
+        android:name="com.ar.gptamwena.ui.fragments.MyAccountFragment"
         android:label="fragment_my_account"
         tools:layout="@layout/fragment_my_account" />
 </navigation>

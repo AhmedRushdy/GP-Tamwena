@@ -19,6 +19,7 @@ import com.ar.gptamwena.ui.SharedViewModel
 class HomeFragment : Fragment() {
     private lateinit var sharedViewModel: SharedViewModel
     lateinit var binding: FragmentHomeBinding
+    
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

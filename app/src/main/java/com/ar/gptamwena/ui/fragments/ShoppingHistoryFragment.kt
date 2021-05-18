@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.ar.gptamwena.ui.MainActivity2
 import com.ar.gptamwena.R
+import com.ar.gptamwena.ui.DrawerActivity
 import com.ar.gptamwena.ui.SharedViewModel
 
 class ShoppingHistoryFragment  : Fragment() {
@@ -21,6 +21,7 @@ class ShoppingHistoryFragment  : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = (activity as DrawerActivity).viewModel
 
     }
 }

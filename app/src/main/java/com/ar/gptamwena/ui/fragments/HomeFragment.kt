@@ -4,17 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.ar.gptamwena.ui.MainActivity2
-import com.ar.gptamwena.ui.SharedViewModel
 import com.ar.gptamwena.adapters.CustomerMainProductsAdapter
 import com.ar.gptamwena.adapters.CustomerMainShopsAdapter
 import com.ar.gptamwena.databinding.FragmentHomeBinding
+import com.ar.gptamwena.ui.DrawerActivity
+import com.ar.gptamwena.ui.SharedViewModel
 
 class HomeFragment : Fragment() {
-    lateinit var viewModel: SharedViewModel
+    private lateinit var sharedViewModel: SharedViewModel
     lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,6 +29,8 @@ class HomeFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sharedViewModel = (activity as DrawerActivity).viewModel
+
         initRecyclerView()
         binding.btnCstMainShowAll.setOnClickListener(View.OnClickListener {
 ////            startActivity(
@@ -44,5 +49,4 @@ class HomeFragment : Fragment() {
         binding.rvCstMainShops.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
         binding.rvCstMainBought.adapter = CustomerMainProductsAdapter()
         binding.rvCstMainBought.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
-    }
-}
+    }}

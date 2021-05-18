@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ar.gptamwena.ui.MainActivity2
 import com.ar.gptamwena.databinding.FragmentThirdBinding
+import com.ar.gptamwena.ui.DrawerActivity
 
 class ThirdFragment : Fragment() {
     lateinit var binding: FragmentThirdBinding
@@ -20,7 +20,7 @@ class ThirdFragment : Fragment() {
         val view = binding.root
 
         binding.finish.setOnClickListener {
-            val intent = Intent(requireContext(), MainActivity2::class.java)
+            val intent = Intent(requireContext(), DrawerActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
             onBoardingFinish()

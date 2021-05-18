@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".activities.SignActivity">
+
+    <VideoView
+        android:id="@+id/splash_vid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@color/black" />
+
+
+    <FrameLayout
+        android:id="@+id/splash_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_shape"
+        android:backgroundTint="@color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lobster_regular"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/splash_frame"
+        android:layout_marginBottom="25sp"
+        android:text="Tamwena"
+        android:textColor="@color/white"
+        android:textSize="50dp" />
+</RelativeLayout>

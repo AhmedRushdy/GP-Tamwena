@@ -9,8 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.ar.gptamwena.ui.MainActivity2
 import com.ar.gptamwena.R
+import com.ar.gptamwena.ui.DrawerActivity
+import com.ar.gptamwena.ui.MainActivity
+import com.ar.gptamwena.ui.login.SignActivity
 
 class SplashFragment : Fragment() {
 
@@ -20,7 +22,7 @@ class SplashFragment : Fragment() {
     ): View? {
         Handler().postDelayed({
             if (obBoardingCheck()) {
-                val intent = Intent(requireContext(), MainActivity2::class.java)
+                val intent = Intent(requireContext(), SignActivity::class.java)
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent)
             } else {

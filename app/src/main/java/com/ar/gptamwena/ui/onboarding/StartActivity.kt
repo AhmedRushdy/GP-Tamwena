@@ -7,7 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import com.ar.gptamwena.R
-import com.ar.gptamwena.ui.MainActivity2
+import com.ar.gptamwena.ui.DrawerActivity
 
 class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

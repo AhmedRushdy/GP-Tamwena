@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.ar.gptamwena.ui.MainActivity2
 import com.ar.gptamwena.R
 import com.ar.gptamwena.ui.SharedViewModel
 

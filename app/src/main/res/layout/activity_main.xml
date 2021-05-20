@@ -8,76 +8,60 @@
     >
 
     <ImageView
-        android:id="@+id/image_market"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:src="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        app:layout_constraintTop_toBottomOf="@+id/image_market">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="19dp"
-            android:fontFamily="@font/cairo_bold"
-            android:text="ش الشنقيرى بأرض المحلج"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.946"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.862" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/cairo_bold"
-            android:text="ماكدونلدز"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/call_btn"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/call_btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/custom_btn"
-            android:drawableTop="@drawable/ic_call"
-            app:layout_constraintBottom_toBottomOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintHorizontal_bias="0.105"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#708090"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/tabs"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/back_to_main"
+        android:layout_width="24sp"
+        android:layout_height="24sp"
+        android:layout_margin="16sp"
+        android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16sp"
+        android:background="@drawable/btn_shape3"
+        android:backgroundTint="@color/green"
+        android:padding="10sp"
+        android:src="@drawable/ic_phone"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_cst_shop_profile_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_cst_shop_profile_name" />
+
+    <TextView
+        android:id="@+id/txt_cst_shop_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:fontFamily="@font/cairo_bold"
+        android:text="ماكدونلدز"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <TextView
+        android:id="@+id/txt_cst_shop_profile_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="5sp"
+        android:fontFamily="@font/cairo_light"
+        android:text="ش الشقنقيرى بأرض المحلج"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cst_shop_profile_name" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
@@ -98,21 +82,28 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btn_cst_main_show_all"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity=""
-        android:background="@drawable/custom_btn"
-        android:fontFamily="@font/cairo_bold"
+        android:layout_marginTop="10sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30sp"
+        android:background="@drawable/btn_shape3"
+        android:backgroundTint="@color/green"
+        android:drawableStart="@drawable/ic_store"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/cairo_regular"
         android:padding="5dp"
-
-        android:text="  اجمالى المشتريات 00.0 ج.م"
+        android:paddingStart="25sp"
+        android:paddingEnd="25sp"
+        android:text="إجمالى المشتريات 0.00 ج.م"
         android:textColor="@color/white"
-        app:drawableRightCompat="@drawable/ic_credit_card"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        tools:targetApi="m" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

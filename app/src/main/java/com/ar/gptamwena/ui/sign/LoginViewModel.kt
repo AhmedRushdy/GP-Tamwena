@@ -1,4 +1,4 @@
-package com.ar.gptamwena.ui.login
+package com.ar.gptamwena.ui.sign
 
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
@@ -15,10 +15,12 @@ class LoginViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel(),
 
     init {
 
-
         rootNode = FirebaseDatabase.getInstance()
         customersAuthReference = rootNode.getReference("customers")
 
         loading.postValue(false)
     }
+
+
+
 }

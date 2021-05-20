@@ -10,9 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ar.gptamwena.R
-import com.ar.gptamwena.ui.DrawerActivity
-import com.ar.gptamwena.ui.MainActivity
-import com.ar.gptamwena.ui.login.SignActivity
+import com.ar.gptamwena.ui.sign.SignActivity
 
 class SplashFragment : Fragment() {
 

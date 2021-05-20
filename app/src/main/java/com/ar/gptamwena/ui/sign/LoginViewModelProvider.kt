@@ -1,4 +1,4 @@
-package com.ar.gptamwena.ui.login
+package com.ar.gptamwena.ui.sign
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.Dispatchers

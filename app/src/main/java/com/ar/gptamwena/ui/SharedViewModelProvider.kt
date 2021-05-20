@@ -2,7 +2,6 @@ package com.ar.gptamwena.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.ar.gptamwena.ui.login.LoginViewModel
 import kotlinx.coroutines.Dispatchers
 
 class SharedViewModelProvider : ViewModelProvider.Factory {

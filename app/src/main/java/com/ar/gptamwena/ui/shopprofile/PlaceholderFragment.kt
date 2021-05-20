@@ -1,4 +1,4 @@
-package com.ar.gptamwena.ui.main
+package com.ar.gptamwena.ui.shopprofile
 
 import android.os.Bundle
 import android.view.LayoutInflater

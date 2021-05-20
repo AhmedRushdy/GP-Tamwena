@@ -1,4 +1,4 @@
-package com.ar.gptamwena.ui.login
+package com.ar.gptamwena.ui.sign
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

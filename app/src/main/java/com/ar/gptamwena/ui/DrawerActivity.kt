@@ -1,7 +1,6 @@
 package com.ar.gptamwena.ui
 
 import android.os.Bundle
-import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -14,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.ar.gptamwena.R
 import com.ar.gptamwena.databinding.ActivityDrawerBinding
-import com.ar.gptamwena.ui.login.LoginViewModel
-import com.ar.gptamwena.ui.login.LoginViewModelProvider
 
 class DrawerActivity : AppCompatActivity() {
 

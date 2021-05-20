@@ -1,13 +1,13 @@
-package com.ar.gptamwena.ui
+package com.ar.gptamwena.ui.shopprofile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.ar.gptamwena.R
-import com.ar.gptamwena.ui.main.SectionsPagerAdapter
+import com.ar.gptamwena.ui.shopprofile.SectionsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 
-class MainActivity : AppCompatActivity() {
+class ShopProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

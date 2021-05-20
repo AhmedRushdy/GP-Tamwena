@@ -22,8 +22,8 @@
     <string name="finish">finish</string>
 
 
-    <string name="tab_text_1" translatable="false">المكونات</string>
-    <string name="tab_text_2" translatable="false">معلومات عن المكان</string>
+    <string name="tab_text_1" translatable="false">المنتجات</string>
+    <string name="tab_text_2" translatable="false"> عن المكان</string>
     <string name="title_activity_drawer2">DrawerActivity2</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

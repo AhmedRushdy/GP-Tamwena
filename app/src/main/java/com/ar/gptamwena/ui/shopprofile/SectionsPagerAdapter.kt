@@ -1,4 +1,4 @@
-package com.ar.gptamwena.ui.main
+package com.ar.gptamwena.ui.shopprofile
 
 import android.content.Context
 import androidx.fragment.app.Fragment

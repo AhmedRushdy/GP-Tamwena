@@ -5,16 +5,39 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.shopprofile.PlaceholderFragment">
+    >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Parent_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:padding="4dp"
+        tools:listitem="@layout/products_li_item"
         android:scrollbars="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cst_main_show_all"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <Button
+        android:id="@+id/btn_cst_main_show_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/btn_shape3"
+        android:backgroundTint="@color/green"
+        android:drawableStart="@drawable/ic_store"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/cairo_regular"
+        android:padding="5dp"
+        android:paddingStart="25sp"
+        android:paddingEnd="25sp"
+        android:text="إجمالى المشتريات 0.00 ج.م"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:targetApi="m" />
 </androidx.constraintlayout.widget.ConstraintLayout>

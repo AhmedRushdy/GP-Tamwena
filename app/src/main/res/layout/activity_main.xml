@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/imageView"
@@ -55,67 +54,68 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
-        android:layout_marginTop="5sp"
-        android:fontFamily="@font/cairo_light"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/cairo_regular"
         android:text="ش الشقنقيرى بأرض المحلج"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_cst_shop_profile_name" />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cst_shop_profile_address" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/view_pager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_cst_main_show_all"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10sp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="30sp"
-        android:background="@drawable/btn_shape3"
-        android:backgroundTint="@color/green"
-        android:drawableStart="@drawable/ic_store"
-        android:drawableTint="@color/white"
-        android:fontFamily="@font/cairo_regular"
-        android:padding="5dp"
-        android:paddingStart="25sp"
-        android:paddingEnd="25sp"
-        android:text="إجمالى المشتريات 0.00 ج.م"
-        android:textColor="@color/white"
-        android:textSize="16sp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:targetApi="m" />
+        app:layout_constraintTop_toBottomOf="@+id/tabs"
+        app:layout_constraintVertical_bias="0.079" />
+
+    <RatingBar
+        android:id="@+id/MyRating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="3.5"
+        android:stepSize="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/txt_cst_shop_profile_address"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_cst_shop_profile_address"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cst_shop_profile_address" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="717dp"
-        android:layout_marginEnd="411dp"
-        android:layout_marginBottom="152dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.86"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintGuide_begin="293dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

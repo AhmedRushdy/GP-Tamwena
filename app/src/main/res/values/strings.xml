@@ -24,6 +24,8 @@
 
     <string name="tab_text_1" translatable="false">المنتجات</string>
     <string name="tab_text_2" translatable="false"> عن المكان</string>
+    <string name="tab_text_3" translatable="false">التقييم</string>
+    <string name="tab_text_4" translatable="false"> تواصل معنا</string>
     <string name="title_activity_drawer2">DrawerActivity2</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

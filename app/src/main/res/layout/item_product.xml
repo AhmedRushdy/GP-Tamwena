@@ -6,10 +6,13 @@
     android:layout_height="150dp"
     android:layout_marginStart="16dp"
     android:orientation="vertical"
-    app:ignore="NamespaceTypo">
+    app:ignore="NamespaceTypo"
+    android:padding="5dp"
+    android:background="@drawable/btn_shape3"
+    >
 
     <androidx.cardview.widget.CardView
-        android:layout_width="180dp"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         app:cardCornerRadius="7dp"
         app:cardElevation="5dp">
@@ -55,15 +58,13 @@
             android:layout_height="wrap_content"
             android:background="@drawable/arrow_up"
             android:layout_alignParentEnd="true"
-
-            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_product_counter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="7dp"
             android:layout_marginEnd="4dp"
             android:layout_toStartOf="@id/btn_product_plus"
@@ -80,7 +81,6 @@
             android:layout_marginStart="30dp"
             android:layout_toEndOf="@id/tv_productName"
             android:background="@drawable/arrow_down"
-            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
 

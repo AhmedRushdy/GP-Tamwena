@@ -1,4 +1,7 @@
 package com.ar.gptamwena.models
 
-class ProductModel {
-}
+data class ProductModel (
+    var productName: String,
+    var productImage: Int,
+    var wallet: Int
+)

@@ -5,13 +5,15 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    
     >
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Parent_recyclerView"
+        android:id="@+id/parent_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:padding="4dp"
+        tools:itemCount="3"
         tools:listitem="@layout/products_li_item"
         android:scrollbars="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"

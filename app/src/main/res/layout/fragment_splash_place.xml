@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/btn_shape"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        android:fontFamily="@font/cairo_bold"
+        android:text="الحصول على الموقع الجغرافى"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/cairo_light"
+        android:text="قم بإختيار موقعك للبدأ فى استخدام التطبيق"
+        android:textColor="@color/gray"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/check_place_gps"
+        android:layout_width="328sp"
+        android:layout_height="48sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_shape3"
+        android:backgroundTint="@color/green"
+        android:fontFamily="@font/cairo_regular"
+        android:text="السماح بالوصول إلى الموقع الجغرافى"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/check_place_manual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20sp"
+        android:fontFamily="@font/cairo_regular"
+        android:gravity="center"
+        android:text="الحصول على الموقع يدوياََ"
+        android:textColor="@color/green"
+        android:textSize="16sp" />
+
+</LinearLayout>

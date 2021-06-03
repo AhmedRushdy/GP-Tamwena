@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/btn_shape"
+    android:backgroundTint="@color/white"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        android:fontFamily="@font/cairo_bold"
+        android:text="إختر الموقع يدوياََ"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/cairo_light"
+        android:text="قم المحافظه متبوعاََ بالمركز التابع له"
+        android:textColor="@color/gray"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/check_place_govern"
+        android:layout_width="328sp"
+        android:layout_height="48sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_shape3"
+        android:backgroundTint="@color/green"
+        android:drawableRight="@drawable/ic_place"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/cairo_regular"
+        android:text="بني سويف"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/check_place_state"
+        android:layout_width="328sp"
+        android:layout_height="48sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:background="@drawable/btn_shape3"
+        android:backgroundTint="@color/green"
+        android:drawableRight="@drawable/ic_place"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/cairo_regular"
+        android:text="بنى سويف"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

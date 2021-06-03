@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/btn_shape"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        android:fontFamily="@font/cairo_bold"
+        android:text="أهلا بك فى تموينا"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/splash_login"
+        android:layout_width="328sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/btn_shape3"
+        android:backgroundTint="@color/green"
+        android:fontFamily="@font/cairo_regular"
+        android:padding="10dp"
+        android:text="تسجيل الدخول"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/splash_signup"
+        android:layout_width="328sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_shape3"
+        android:fontFamily="@font/cairo_regular"
+        android:padding="10dp"
+        android:text="@string/create_account"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

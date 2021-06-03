@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_24"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_search_for_market"
+            android:icon="@drawable/ic_baseline_location_searching_24"
+            android:title="@string/search_for_market" />
+        <item
+            android:id="@+id/nav_shopping_history"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/shopping_history" />
+        <item
+            android:id="@+id/nav_my_account"
+            android:icon="@drawable/ic_baseline_account_circle_24"
+            android:title="@string/my_account" />
+    </group>
+
+    <item android:title="اخرى" >
+        <menu>
+            <item android:id="@+id/about_app"
+                android:icon="@drawable/ic_baseline_about_help_24"
+                android:title="@string/about_the_app" />
+            <item android:id="@+id/contact_with_us"
+                android:icon="@drawable/ic_baseline_message_24"
+                android:title="@string/call_us" />
+            <item android:id="@+id/privacy_terms"
+                android:icon="@drawable/ic_baseline_privacy_tip_24"
+                android:title="@string/privacy_terms" />
+            <item android:id="@+id/sign_out"
+                android:icon="@drawable/ic_baseline_exit_to_app_24"
+                android:title="@string/sign_out" />
+        </menu>
+    </item>
+</menu>

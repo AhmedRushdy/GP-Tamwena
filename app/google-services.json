@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "623809563696",
+    "firebase_url": "https://tamwena-1f173-default-rtdb.firebaseio.com",
+    "project_id": "tamwena-1f173",
+    "storage_bucket": "tamwena-1f173.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623809563696:android:33b57b50379eecff6b71f5",
+        "android_client_info": {
+          "package_name": "com.ar.gptamwena"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623809563696-qi27hon13d8nn58enbr6hb2hp5r28nb1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYRZrBQZecCnc_LteyV5778hYSUpxF32Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623809563696-qi27hon13d8nn58enbr6hb2hp5r28nb1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623809563696:android:9412f2fa74f280df6b71f5",
+        "android_client_info": {
+          "package_name": "com.graduationproject.tamwenasellerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623809563696-qi27hon13d8nn58enbr6hb2hp5r28nb1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYRZrBQZecCnc_LteyV5778hYSUpxF32Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623809563696-qi27hon13d8nn58enbr6hb2hp5r28nb1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

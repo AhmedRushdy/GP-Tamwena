@@ -31,7 +31,7 @@ class SignActivity : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-        var loginViewModelProvider = LoginViewModelProvider()
+        var loginViewModelProvider = LoginViewModelProvider(application)
         loginViewModel =
             ViewModelProvider(this, loginViewModelProvider).get(LoginViewModel::class.java)
     }

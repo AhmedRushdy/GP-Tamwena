@@ -3,18 +3,17 @@ package com.ar.gptamwena.ui.sign
 import android.app.Application
 import android.content.Context
 import android.content.Intent
-import android.location.Address
-import android.location.Geocoder
-import android.util.Log
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.*
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.MutableLiveData
 import com.ar.gptamwena.models.CustomerModel
 import com.ar.gptamwena.ui.DrawerActivity
 import com.google.firebase.database.*
-import kotlinx.coroutines.*
-import java.util.*
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class LoginViewModel(
     private val dispatcher: CoroutineDispatcher,
@@ -117,6 +116,7 @@ private fun moveToNext(context: Context) {
         DrawerActivity::class.java
     )
     intent.putExtra("customerData",customerModel)
+    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
     context.startActivity(intent)
 }
 }

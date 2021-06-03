@@ -1,5 +1,5 @@
 package com.ar.gptamwena.models
 
-class OrderModel {
+class OrderModel { 
 }
 

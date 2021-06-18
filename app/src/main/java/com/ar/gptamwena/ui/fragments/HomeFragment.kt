@@ -1,6 +1,7 @@
 package com.ar.gptamwena.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,10 @@ import com.ar.gptamwena.databinding.FragmentHomeBinding
 import com.ar.gptamwena.models.SellerModel
 import com.ar.gptamwena.ui.DrawerActivity
 import com.ar.gptamwena.ui.SharedViewModel
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class HomeFragment : Fragment() {
     private lateinit var sharedViewModel: SharedViewModel
@@ -37,7 +41,7 @@ class HomeFragment : Fragment() {
 
         initRecyclerView()
 
-        sellerAdapter.differ.submitList(sharedViewModel.sellerList)
+        getshops()
         binding.btnCstMainShowAll.setOnClickListener(
             View.OnClickListener {
                 findNavController().navigate(R.id.action_nav_home_to_near_shops)
@@ -60,22 +64,31 @@ class HomeFragment : Fragment() {
     }
     fun getshops(){
         var sellerList = mutableListOf<SellerModel>()
-
         val sellerDatabase = FirebaseDatabase.getInstance()
-        sellerDatabase.getReference("sellers").get().addOnSuccessListener {
-            for (postSnapshot in it.children) {
-                var sellerModel = SellerModel(
-                    postSnapshot.child("licenceNumber").value.toString(),
-                    postSnapshot.child("marketLocation").value.toString(),
-                    postSnapshot.child("marketName").value.toString(),
-                    postSnapshot.child("nationalID").value.toString(),
-                    postSnapshot.child("ownerName").value.toString(),
-                    postSnapshot.child("phoneNumber").value.toString()
-                )
+        var sellerReference = sellerDatabase.getReference("sellers")
+        val sellerListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (postSnapshot in dataSnapshot.children) {
+                    var sellerModel: SellerModel = SellerModel(
+                        postSnapshot.child("licenceNumber").value.toString(),
+                        postSnapshot.child("marketLocation").value.toString(),
+                        postSnapshot.child("marketName").value.toString(),
+                        postSnapshot.child("nationalID").value.toString(),
+                        postSnapshot.child("ownerName").value.toString(),
+                        postSnapshot.child("phoneNumber").value.toString()
+                    )
 
-                sellerList.add(sellerModel)
+                    sellerList.add(sellerModel)
+                }
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Getting Post failed, log a message
+                Log.w("2222", "loadPost:onCancelled", databaseError.toException())
             }
         }
+        sellerReference.addValueEventListener(sellerListener)
         sellerAdapter.differ.submitList(sellerList)
 
     }

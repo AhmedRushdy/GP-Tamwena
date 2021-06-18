@@ -27,7 +27,8 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
     init {
         productsDatabase = FirebaseDatabase.getInstance()
         sellerDatabase = FirebaseDatabase.getInstance()
-        getSellers()
+      //  getSellers()
+        getSellerTest()
     }
 
 
@@ -56,6 +57,28 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
             }
         }
         sellerReference.addValueEventListener(sellerListener)
+
+        return sellerList
+    }
+
+    fun getSellerTest(): List<SellerModel>{
+       sellerDatabase.getReference("sellers").get().addOnSuccessListener {
+           for (postSnapshot in it.children) {
+               var sellerModel: SellerModel = SellerModel(
+                   postSnapshot.child("licenceNumber").value.toString(),
+                   postSnapshot.child("marketLocation").value.toString(),
+                   postSnapshot.child("marketName").value.toString(),
+                   postSnapshot.child("nationalID").value.toString(),
+                   postSnapshot.child("ownerName").value.toString(),
+                   postSnapshot.child("phoneNumber").value.toString()
+               )
+
+               sellerList.add(sellerModel)
+           }
+
+       }.addOnFailureListener{
+            Log.e("firebase", "Error getting data", it)
+        }
         return sellerList
     }
 

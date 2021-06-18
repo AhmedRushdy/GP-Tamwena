@@ -1,45 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
-    >
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <View
+        android:id="@+id/view_rice"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="3dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/green"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewProduct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewProduct" />
+
+    <TextView
+        android:id="@+id/textViewProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:fontFamily="@font/cairo_bold"
+        android:text="أرز"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/view_rice"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/parent_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="4dp"
-        tools:itemCount="3"
-        tools:listitem="@layout/products_li_item"
-        android:scrollbars="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cst_main_show_all"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/btn_cst_main_show_all"
-        android:layout_width="match_parent"
+        android:id="@+id/recyclerView_rice_category"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/btn_shape3"
-        android:backgroundTint="@color/green"
-        android:drawableStart="@drawable/ic_store"
-        android:drawableTint="@color/white"
-        android:fontFamily="@font/cairo_regular"
-        android:padding="5dp"
-        android:paddingStart="25sp"
-        android:paddingEnd="25sp"
-        android:text="إجمالى المشتريات 0.00 ج.م"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:targetApi="m" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textViewProduct"
+        tools:listitem="@layout/item_cst_main_products" />
+
+    <View
+        android:id="@+id/view_oil"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="3dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/holo_green_light"
+        android:backgroundTint="@color/green50"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewProduct_oil"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewProduct_oil" />
+
+    <TextView
+        android:id="@+id/textViewProduct_oil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:fontFamily="@font/cairo_bold"
+        android:text="زيت "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/view_oil"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_rice_category" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_oil_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewProduct_oil"
+        tools:listitem="@layout/item_cst_main_products" />
+
+        <View
+            android:id="@+id/view_sugar"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="3dp"
+            android:layout_marginRight="5dp"
+            android:background="@android:color/holo_green_light"
+            android:backgroundTint="@color/green50"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewProduct_sugar"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewProduct_sugar" />
+
+        <TextView
+            android:id="@+id/textViewProduct_sugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/cairo_bold"
+            android:text="سكر "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/view_sugar"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_oil_category" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_sugar_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProduct_sugar"
+            tools:listitem="@layout/item_cst_main_products" />
+        <View
+            android:id="@+id/view_pasta"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="3dp"
+            android:layout_marginRight="5dp"
+            android:background="@android:color/holo_green_light"
+            android:backgroundTint="@color/green50"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewProduct_pasta"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewProduct_pasta" />
+
+        <TextView
+            android:id="@+id/textViewProduct_pasta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/cairo_bold"
+            android:text="المكرونات "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/view_pasta"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_sugar_category" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_pasta_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProduct_pasta"
+            tools:listitem="@layout/item_cst_main_products" />
+
+        <View
+            android:id="@+id/view_other"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="3dp"
+            android:layout_marginRight="5dp"
+            android:background="@android:color/holo_green_light"
+            android:backgroundTint="@color/green50"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewProduct_other"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewProduct_other" />
+
+        <TextView
+            android:id="@+id/textViewProduct_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/cairo_bold"
+            android:text="منتجات أخرى "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/view_other"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_pasta_category" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_other_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/btn_cst_main_show_all"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProduct_other"
+            tools:listitem="@layout/item_cst_main_products" />
+
+        <Button
+            android:id="@+id/btn_cst_main_show_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_shape3"
+            android:backgroundTint="@color/green"
+            android:drawableStart="@drawable/ic_store"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/cairo_regular"
+            android:padding="5dp"
+            android:paddingStart="25sp"
+            android:paddingEnd="25sp"
+            android:text="إجمالى المشتريات 0.00 ج.م"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:targetApi="m" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

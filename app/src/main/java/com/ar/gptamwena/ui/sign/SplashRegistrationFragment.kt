@@ -25,7 +25,7 @@ class SplashRegistrationFragment : Fragment() {
             assert(fragmentManager != null)
             val transaction = requireFragmentManager().beginTransaction()
             // transaction.setCustomAnimations(R.anim.left_to_right,R.anim.exit_left_to_right,R.anim.right_to_left,R.anim.exit_right_to_left);
-            transaction.replace(R.id.splash_frame, SignActivity.fragment!!)
+            transaction.replace(R.id.fragment_frame, SignActivity.fragment!!)
             transaction.addToBackStack(null)
             transaction.commit()
         })

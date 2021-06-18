@@ -31,7 +31,7 @@ class SplashPlaceFragment : Fragment() {
                     R.anim.right_to_left,
                     R.anim.exit_right_to_left
                 )
-            transaction.replace(R.id.splash_frame, SignActivity.fragment!!)
+            transaction.replace(R.id.fragment_frame, SignActivity.fragment!!)
             transaction.addToBackStack(null)
             transaction.commit()
         })

@@ -3,6 +3,7 @@ package com.ar.gptamwena.ui.sign
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.AndroidViewModel
@@ -70,7 +71,7 @@ class LoginViewModel(
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
+                Log.e("error Login",error.message)
 
             }
 

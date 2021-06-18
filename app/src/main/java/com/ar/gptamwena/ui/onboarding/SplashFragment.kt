@@ -21,7 +21,7 @@ class SplashFragment : Fragment() {
         Handler().postDelayed({
             if (obBoardingCheck()) {
                 val intent = Intent(requireContext(), SignActivity::class.java)
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP;
                 startActivity(intent)
             } else {
                 findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)

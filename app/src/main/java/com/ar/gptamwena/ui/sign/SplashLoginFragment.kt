@@ -36,7 +36,7 @@ class SplashLoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as SignActivity).loginViewModel
-        binding.btnLogin.setOnClickListener(View.OnClickListener { view ->
+        binding.btnLogin.setOnClickListener(View.OnClickListener {
             lifecycleScope.launch {
                 viewModel.getUser(
                     requireActivity(),
@@ -45,9 +45,6 @@ class SplashLoginFragment : Fragment() {
                 )
 
             }
-
-
-
         })
     }
 

@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ar.gptamwena.R
 import com.ar.gptamwena.models.ParentModel
 
-
-
 class ParentAdapter : RecyclerView.Adapter<ParentAdapter.ViewHolder>(){
     private val viewPool = RecyclerView.RecycledViewPool()
 
@@ -28,6 +26,7 @@ class ParentAdapter : RecyclerView.Adapter<ParentAdapter.ViewHolder>(){
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.recyclerView.apply {
             layoutManager = LinearLayoutManager(holder.recyclerView.context, RecyclerView.HORIZONTAL, false)
+
             adapter = CustomerMainProductsAdapter()
             setRecycledViewPool(viewPool)
 
@@ -35,8 +34,10 @@ class ParentAdapter : RecyclerView.Adapter<ParentAdapter.ViewHolder>(){
     }
 
 
-    inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val recyclerView : RecyclerView = itemView.findViewById(R.id.recyclerView_item_category)
         val textView:TextView = itemView.findViewById(R.id.textViewProduct)
     }
+
+
 }

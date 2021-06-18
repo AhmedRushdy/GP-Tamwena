@@ -2,36 +2,34 @@ package com.ar.gptamwena.ui.sign
 
 import android.net.Uri
 import android.os.Bundle
-import android.view.View
-import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ar.gptamwena.R
 import androidx.lifecycle.ViewModelProvider
+import com.ar.gptamwena.databinding.ActivitySignCustomerBinding
 
 class SignActivity : AppCompatActivity() {
-    private var splashVideo: VideoView? = null
     lateinit var loginViewModel: LoginViewModel
-
+    lateinit var binding: ActivitySignCustomerBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign)
+        binding = ActivitySignCustomerBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         initViewModel()
 
-
-        splashVideo = findViewById<View>(R.id.splash_vid) as VideoView
         val uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.splashvid)
-        splashVideo!!.setVideoURI(uri)
+        binding.splashVid.setVideoURI(uri)
         fragment = SplashPlaceFragment()
         supportFragmentManager.beginTransaction().replace(
-            R.id.splash_frame,
+            R.id.fragment_frame,
             fragment!!
         ).commit()
     }
 
     private fun initViewModel() {
-        var loginViewModelProvider = LoginViewModelProvider(application)
+        val loginViewModelProvider = LoginViewModelProvider(application)
         loginViewModel =
             ViewModelProvider(this, loginViewModelProvider).get(LoginViewModel::class.java)
     }
@@ -39,8 +37,8 @@ class SignActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        splashVideo!!.setOnCompletionListener { mediaPlayer -> mediaPlayer.start() }
-        splashVideo!!.start()
+        binding.splashVid.setOnCompletionListener { mediaPlayer -> mediaPlayer.start() }
+        binding.splashVid.start()
     }
 
     companion object {

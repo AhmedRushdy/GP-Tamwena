@@ -21,5 +21,7 @@ class CustomerMainProductsAdapter :
     override fun getItemCount(): Int {
         return 5
     }
-}
+
+
+        }
 

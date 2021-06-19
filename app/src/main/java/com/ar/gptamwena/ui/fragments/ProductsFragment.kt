@@ -14,6 +14,10 @@ import com.ar.gptamwena.models.ProductModel
 import com.ar.gptamwena.models.SellerModel
 import com.ar.gptamwena.ui.DrawerActivity
 import com.ar.gptamwena.ui.SharedViewModel
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class ProductsFragment : Fragment() {
@@ -46,48 +50,57 @@ class ProductsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = (activity as DrawerActivity).viewModel
         seller = args.sellerObject
+        viewModel = (activity as DrawerActivity).viewModel
 
+        viewModel.getProducts(seller.licenceNumber, "oil")
+        viewModel.getProducts(seller.licenceNumber, "sugar")
+        viewModel.getProducts(seller.licenceNumber, "rice")
+        viewModel.getProducts(seller.licenceNumber, "pasta")
         initRV()
-        oilAdapter.differ.submitList(viewModel.getProducts(seller.licenceNumber,"oil"))
-        sugarAdapter.differ.submitList(viewModel.getProducts(seller.licenceNumber,"sugar"))
-        riceAdapter.differ.submitList(viewModel.getProducts(seller.licenceNumber,"rice"))
-        pastaAdapter.differ.submitList(viewModel.getProducts(seller.licenceNumber,"pasta"))
+        var job: Job? = null
 
+        job?.cancel()
+        job = MainScope().launch {
+            delay(1500)
 
-
-    }
-
-    private fun initRV() {
-        oilAdapter = ProductsAdapter()
-        sugarAdapter = ProductsAdapter()
-        pastaAdapter = ProductsAdapter()
-        riceAdapter = ProductsAdapter()
-        otherAdapter = ProductsAdapter()
-
-        binding.apply {
-            recyclerViewOilCategory.adapter = oilAdapter
-            recyclerViewOtherCategory.adapter = otherAdapter
-            recyclerViewPastaCategory.adapter = pastaAdapter
-            recyclerViewRiceCategory.adapter = riceAdapter
-            recyclerViewSugarCategory.adapter = sugarAdapter
-
-            recyclerViewOilCategory.layoutManager =
-                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
-            recyclerViewOtherCategory.layoutManager =
-                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
-            recyclerViewPastaCategory.layoutManager =
-                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
-            recyclerViewRiceCategory.layoutManager =
-                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
-            recyclerViewSugarCategory.layoutManager =
-                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
-
-
+            oilAdapter.differ.submitList(viewModel.oilList)
+            sugarAdapter.differ.submitList(viewModel.sugarList)
+            riceAdapter.differ.submitList(viewModel.riceList)
+            pastaAdapter.differ.submitList(viewModel.pastaList)
         }
 
+}
+
+private fun initRV() {
+    oilAdapter = ProductsAdapter()
+    sugarAdapter = ProductsAdapter()
+    pastaAdapter = ProductsAdapter()
+    riceAdapter = ProductsAdapter()
+//        otherAdapter = ProductsAdapter()
+
+    binding.apply {
+        recyclerViewOilCategory.adapter = oilAdapter
+        //recyclerViewOtherCategory.adapter = otherAdapter
+        recyclerViewPastaCategory.adapter = pastaAdapter
+        recyclerViewRiceCategory.adapter = riceAdapter
+        recyclerViewSugarCategory.adapter = sugarAdapter
+
+        recyclerViewOilCategory.layoutManager =
+            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
+        recyclerViewOtherCategory.layoutManager =
+            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
+        recyclerViewPastaCategory.layoutManager =
+            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
+        recyclerViewRiceCategory.layoutManager =
+            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
+        recyclerViewSugarCategory.layoutManager =
+            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
+
+
     }
+
+}
 
 }
 

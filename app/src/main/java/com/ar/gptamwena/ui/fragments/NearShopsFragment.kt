@@ -32,13 +32,12 @@ class NearShopsFragment : Fragment() {
         sharedViewModel = (activity as DrawerActivity).viewModel
 
         initRV()
+
         adapter.differ.submitList(sharedViewModel.sellerList)
-
-
     }
 
     private fun initRV() {
-        adapter = CustomerMainShopsAdapter("full")
+        adapter = CustomerMainShopsAdapter()
         binding.rvCstShowShops.adapter = adapter
         binding.rvCstShowShops.layoutManager = LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL, false)
     }

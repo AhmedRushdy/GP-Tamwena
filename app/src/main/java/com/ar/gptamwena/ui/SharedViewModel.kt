@@ -19,6 +19,10 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
     var productsDatabase: FirebaseDatabase
     var sellerList: MutableList<SellerModel> = mutableListOf()
     var productsList: MutableList<ProductModel> = mutableListOf()
+    var riceList: MutableList<ProductModel> = mutableListOf()
+    var oilList: MutableList<ProductModel> = mutableListOf()
+    var pastaList: MutableList<ProductModel> = mutableListOf()
+    var sugarList: MutableList<ProductModel> = mutableListOf()
 
     var productsList2: MutableList<ProductModel> = mutableListOf()
 
@@ -27,12 +31,12 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
     init {
         productsDatabase = FirebaseDatabase.getInstance()
         sellerDatabase = FirebaseDatabase.getInstance()
-      //  getSellers()
-        getSellerTest()
+        getSellers()
+//        getSellerTest()
     }
 
 
-    fun getSellers(): List<SellerModel> {
+    fun getSellers() {
         sellerReference = sellerDatabase.getReference("sellers")
         val sellerListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -58,34 +62,30 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
         }
         sellerReference.addValueEventListener(sellerListener)
 
-        return sellerList
     }
 
-    fun getSellerTest(): List<SellerModel>{
-       sellerDatabase.getReference("sellers").get().addOnSuccessListener {
-           for (postSnapshot in it.children) {
-               var sellerModel: SellerModel = SellerModel(
-                   postSnapshot.child("licenceNumber").value.toString(),
-                   postSnapshot.child("marketLocation").value.toString(),
-                   postSnapshot.child("marketName").value.toString(),
-                   postSnapshot.child("nationalID").value.toString(),
-                   postSnapshot.child("ownerName").value.toString(),
-                   postSnapshot.child("phoneNumber").value.toString()
-               )
+//    fun getSellerTest(): List<SellerModel>{
+//       sellerDatabase.getReference("sellers").get().addOnSuccessListener {
+//           for (postSnapshot in it.children) {
+//               var sellerModel: SellerModel = SellerModel(
+//                   postSnapshot.child("licenceNumber").value.toString(),
+//                   postSnapshot.child("marketLocation").value.toString(),
+//                   postSnapshot.child("marketName").value.toString(),
+//                   postSnapshot.child("nationalID").value.toString(),
+//                   postSnapshot.child("ownerName").value.toString(),
+//                   postSnapshot.child("phoneNumber").value.toString()
+//               )
+//
+//               sellerList.add(sellerModel)
+//           }
+//
+//       }.addOnFailureListener{
+//            Log.e("firebase", "Error getting data", it)
+//        }
+//        return sellerList
+//    }
 
-               sellerList.add(sellerModel)
-           }
-
-       }.addOnFailureListener{
-            Log.e("firebase", "Error getting data", it)
-        }
-        return sellerList
-    }
-
-    fun getProducts(licence: String, productsCat: String): List<ProductModel> {
-//        if (productsList.size > 1)
-//            productsList.clear()
-
+    fun getProducts(licence: String, productsCat: String) {
         productsReference =
             productsDatabase.getReference("products").child(licence).child(productsCat)
         val productListener = object : ValueEventListener {
@@ -98,8 +98,12 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
                         postSnapshot.child("quantity").value.toString(),
                         postSnapshot.child("cost").value.toString()
                     )
-                    productsList.add(productModel)
-
+                    when (productsCat) {
+                        "pasta" -> pastaList.add(productModel)
+                        "oil" -> oilList.add(productModel)
+                        "rice" -> riceList.add(productModel)
+                        "sugar" -> sugarList.add(productModel)
+                    }
                 }
 
             }
@@ -110,7 +114,6 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
             }
         }
         productsReference.addValueEventListener(productListener)
-        return productsList
     }
 
 

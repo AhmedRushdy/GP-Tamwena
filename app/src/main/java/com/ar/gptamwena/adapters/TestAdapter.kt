@@ -49,12 +49,12 @@ class TestAdapter (private val itemList: List<ParentModel>) :
         // Create an instance of the child
         // item view adapter and set its
         // adapter, layout manager and RecyclerViewPool
-        val childItemAdapter = ProductsAdapter()
-        childItemAdapter.differ.submitList(parentItem.ProductList)
-        parentViewHolder.recyclerView.layoutManager = layoutManager
-        parentViewHolder.recyclerView.adapter = childItemAdapter
-        parentViewHolder.recyclerView
-            .setRecycledViewPool(viewPool)
+//        val childItemAdapter = ProductsAdapter()
+//        childItemAdapter.differ.submitList(parentItem.ProductList)
+//        parentViewHolder.recyclerView.layoutManager = layoutManager
+//        parentViewHolder.recyclerView.adapter = childItemAdapter
+//        parentViewHolder.recyclerView
+//            .setRecycledViewPool(viewPool)
     }
 
     override fun getItemCount(): Int {

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Task1.Cart" parent="Widget.MaterialComponents.CardView">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="rippleColor">@color/colorAccent</item>
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeTopRight">10dp</item>
+    </style>
+</resources>

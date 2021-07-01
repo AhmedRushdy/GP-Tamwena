@@ -192,7 +192,7 @@
             android:layout_marginBottom="10dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/btn_cst_main_show_all"
+            app:layout_constraintBottom_toTopOf="@+id/btn_cst_add_to_cart"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -200,7 +200,7 @@
             tools:listitem="@layout/item_cst_main_products" />
 
         <Button
-            android:id="@+id/btn_cst_main_show_all"
+            android:id="@+id/btn_cst_add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"

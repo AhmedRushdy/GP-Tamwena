@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.sign.SignActivity">
 
     <VideoView
-        android:id="@+id/splash_vid"
+        android:id="@+id/vid_splash_screen"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -17,24 +18,26 @@
         android:alpha="0.5"
         android:background="@color/black" />
 
-
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_frame"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/btn_shape"
-        android:backgroundTint="@color/white" />
+        android:backgroundTint="@color/white"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/start_fragment_trans" />
 
     <TextView
         android:id="@+id/logo_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/lobster_regular"
-        android:layout_centerHorizontal="true"
         android:layout_above="@id/fragment_frame"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="25sp"
+        android:fontFamily="@font/lobster_regular"
         android:text="Tamwena"
         android:textColor="@color/white"
         android:textSize="50dp" />

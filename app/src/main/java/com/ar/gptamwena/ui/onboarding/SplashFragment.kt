@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +19,7 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Handler().postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             if (obBoardingCheck()) {
                 val intent = Intent(requireContext(), SignActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -28,7 +29,7 @@ class SplashFragment : Fragment() {
 
             }
 
-        }, 3000)
+        }, 2000)
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
 

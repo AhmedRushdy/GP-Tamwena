@@ -14,9 +14,6 @@
         <action
             android:id="@+id/action_nav_home_to_near_shops"
             app:destination="@id/near_shops" />
-        <action
-            android:id="@+id/action_nav_home_to_productsFragment"
-            app:destination="@id/productsFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_search_for_market"
@@ -38,12 +35,4 @@
         android:name="com.ar.gptamwena.ui.fragments.NearShopsFragment"
         android:label="fragment_my_account"
         tools:layout="@layout/fragment_near_shops" />
-    <fragment
-        android:id="@+id/productsFragment"
-        android:name="com.ar.gptamwena.ui.fragments.ProductsFragment"
-        android:label="ProductsFragment" >
-        <argument
-            android:name="seller_object"
-            app:argType="com.ar.gptamwena.models.SellerModel" />
-    </fragment>
 </navigation>

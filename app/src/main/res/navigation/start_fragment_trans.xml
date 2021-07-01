@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/start_fragment_trans"
+    app:startDestination="@id/splashPlaceFragment">
+
+    <fragment
+        android:id="@+id/splashLoginFragment"
+        android:name="com.ar.gptamwena.ui.sign.SplashLoginFragment"
+        android:label="SplashLoginFragment" />
+    <fragment
+        android:id="@+id/splashPlaceFragment"
+        android:name="com.ar.gptamwena.ui.sign.SplashPlaceFragment"
+        android:label="SplashPlaceFragment" >
+        <action
+            android:id="@+id/action_splashPlaceFragment_to_splashRegistrationFragment"
+            app:destination="@id/splashRegistrationFragment"
+            app:enterAnim="@anim/left_to_right"
+            app:exitAnim="@anim/exit_left_to_right"
+            app:popEnterAnim="@anim/right_to_left"
+            app:popExitAnim="@anim/exit_right_to_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/splashRegistrationFragment"
+        android:name="com.ar.gptamwena.ui.sign.SplashRegistrationFragment"
+        android:label="SplashRegistrationFragment" >
+        <action
+            android:id="@+id/action_splashRegistrationFragment_to_splashLoginFragment"
+            app:destination="@id/splashLoginFragment"
+            app:enterAnim="@anim/left_to_right"
+            app:exitAnim="@anim/exit_left_to_right"
+            app:popEnterAnim="@anim/right_to_left"
+            app:popExitAnim="@anim/exit_right_to_left"/>
+    </fragment>
+</navigation>

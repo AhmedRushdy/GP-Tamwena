@@ -1,5 +1,6 @@
 package com.ar.gptamwena.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -17,6 +18,7 @@ import com.ar.gptamwena.databinding.FragmentHomeBinding
 import com.ar.gptamwena.models.SellerModel
 import com.ar.gptamwena.ui.DrawerActivity
 import com.ar.gptamwena.ui.SharedViewModel
+import com.ar.gptamwena.ui.shopprofile.ShopProfileActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -25,6 +27,8 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HomeFragment : Fragment() {
     private lateinit var sharedViewModel: SharedViewModel
@@ -50,18 +54,18 @@ class HomeFragment : Fragment() {
                 findNavController().navigate(R.id.action_nav_home_to_near_shops)
 
             })
-
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val currentDate = sdf.format(Date())
+        binding.txtCstMainDate.text =  currentDate
 
         sellerAdapter.setOnItemClickListener {
-
-            val bundle = Bundle().apply {
-                putSerializable("seller_object", it)
-
-            }
-            findNavController().navigate(
-                R.id.action_nav_home_to_productsFragment,
-                bundle
-            )
+//
+//            val bundle = Bundle().apply {
+//                putSerializable("seller_object", it)
+//            }
+            val i = Intent(requireActivity(),ShopProfileActivity::class.java)
+            i.putExtra("seller_object",it)
+            startActivity(i)
         }
         var job: Job? = null
 

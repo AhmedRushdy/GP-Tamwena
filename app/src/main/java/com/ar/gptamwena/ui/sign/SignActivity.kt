@@ -2,6 +2,7 @@ package com.ar.gptamwena.ui.sign
 
 import android.net.Uri
 import android.os.Bundle
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ar.gptamwena.R
@@ -11,6 +12,7 @@ import com.ar.gptamwena.databinding.ActivitySignCustomerBinding
 class SignActivity : AppCompatActivity() {
     lateinit var loginViewModel: LoginViewModel
     lateinit var binding: ActivitySignCustomerBinding
+    lateinit var video : VideoView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignCustomerBinding.inflate(layoutInflater)
@@ -20,12 +22,12 @@ class SignActivity : AppCompatActivity() {
         initViewModel()
 
         val uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.splashvid)
-        binding.splashVid.setVideoURI(uri)
-        fragment = SplashPlaceFragment()
-        supportFragmentManager.beginTransaction().replace(
-            R.id.fragment_frame,
-            fragment!!
-        ).commit()
+        binding.vidSplashScreen.setVideoURI(uri)
+//        fragment = SplashPlaceFragment()
+//        supportFragmentManager.beginTransaction().replace(
+//            R.id.fragment_frame,
+//            fragment!!
+//        ).commit()
     }
 
     private fun initViewModel() {
@@ -37,8 +39,8 @@ class SignActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        binding.splashVid.setOnCompletionListener { mediaPlayer -> mediaPlayer.start() }
-        binding.splashVid.start()
+        binding.vidSplashScreen.setOnCompletionListener { mediaPlayer -> mediaPlayer.start() }
+        binding.vidSplashScreen.start()
     }
 
     companion object {

@@ -1,8 +1,6 @@
 package com.ar.gptamwena.ui
 
-import android.content.Context
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.ViewModel
 import com.ar.gptamwena.models.CustomerModel
@@ -11,6 +9,7 @@ import com.ar.gptamwena.models.SellerModel
 import com.google.firebase.database.*
 import kotlinx.coroutines.CoroutineDispatcher
 
+
 class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel(),
     LifecycleObserver {
     lateinit var customerModel: CustomerModel
@@ -18,20 +17,19 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
     lateinit var sellerReference: DatabaseReference
     var productsDatabase: FirebaseDatabase
     var sellerList: MutableList<SellerModel> = mutableListOf()
-    var productsList: MutableList<ProductModel> = mutableListOf()
+    var productsCartList: MutableList<ProductModel> = mutableListOf()
     var riceList: MutableList<ProductModel> = mutableListOf()
     var oilList: MutableList<ProductModel> = mutableListOf()
     var pastaList: MutableList<ProductModel> = mutableListOf()
     var sugarList: MutableList<ProductModel> = mutableListOf()
-
-    var productsList2: MutableList<ProductModel> = mutableListOf()
-
+    var currentCustomerLic: String = ""
     private lateinit var sellerDatabase: FirebaseDatabase
 
     init {
         productsDatabase = FirebaseDatabase.getInstance()
         sellerDatabase = FirebaseDatabase.getInstance()
         getSellers()
+
 //        getSellerTest()
     }
 
@@ -47,7 +45,9 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
                         postSnapshot.child("marketName").value.toString(),
                         postSnapshot.child("nationalID").value.toString(),
                         postSnapshot.child("ownerName").value.toString(),
-                        postSnapshot.child("phoneNumber").value.toString()
+                        postSnapshot.child("phoneNumber").value.toString(),
+                        postSnapshot.child("image").value.toString()
+
                     )
 
                     sellerList.add(sellerModel)
@@ -64,28 +64,12 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
 
     }
 
-//    fun getSellerTest(): List<SellerModel>{
-//       sellerDatabase.getReference("sellers").get().addOnSuccessListener {
-//           for (postSnapshot in it.children) {
-//               var sellerModel: SellerModel = SellerModel(
-//                   postSnapshot.child("licenceNumber").value.toString(),
-//                   postSnapshot.child("marketLocation").value.toString(),
-//                   postSnapshot.child("marketName").value.toString(),
-//                   postSnapshot.child("nationalID").value.toString(),
-//                   postSnapshot.child("ownerName").value.toString(),
-//                   postSnapshot.child("phoneNumber").value.toString()
-//               )
-//
-//               sellerList.add(sellerModel)
-//           }
-//
-//       }.addOnFailureListener{
-//            Log.e("firebase", "Error getting data", it)
-//        }
-//        return sellerList
-//    }
+    fun addToCart(product: ProductModel) {
+        productsCartList.add(product)
+    }
 
     fun getProducts(licence: String, productsCat: String) {
+        currentCustomerLic = licence
         productsReference =
             productsDatabase.getReference("products").child(licence).child(productsCat)
         val productListener = object : ValueEventListener {
@@ -114,6 +98,15 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
             }
         }
         productsReference.addValueEventListener(productListener)
+    }
+
+    fun writeProductList() {
+        val database = FirebaseDatabase.getInstance()
+        val myRef = database.getReference("cart").child(currentCustomerLic)
+        for (product in productsCartList.iterator()) {
+            myRef.push().setValue(product)
+        }
+
     }
 
 

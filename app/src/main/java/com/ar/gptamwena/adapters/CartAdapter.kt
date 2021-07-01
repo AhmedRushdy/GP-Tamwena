@@ -7,11 +7,12 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ar.gptamwena.databinding.ItemCstMainProductsBinding
+import com.ar.gptamwena.databinding.OrderItemBinding
 import com.ar.gptamwena.models.ProductModel
 import com.bumptech.glide.Glide
 
-class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>() {
-    inner class ProductViewHolder(val binding : ItemCstMainProductsBinding) : RecyclerView.ViewHolder(binding.root)
+class CartAdapter: RecyclerView.Adapter<CartAdapter.ProductViewHolder>() {
+    inner class ProductViewHolder(val binding : OrderItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     private val differCallback = object : DiffUtil.ItemCallback<ProductModel>() {
         override fun areItemsTheSame(oldItem: ProductModel, newItem: ProductModel): Boolean {
@@ -27,7 +28,7 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         return ProductViewHolder(
-            ItemCstMainProductsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            OrderItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         )
     }
 
@@ -35,18 +36,18 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(
         val product = differ.currentList[position]
 
         holder.binding.apply {
-            txtPrevNameItem.text = product.name
-            txtPrevPriceItem.text = product.price + "LE"
+            tvOrderName.text = product.name
             try {
                 Glide.with(root).load(product.image)
-                    .into(imgTypeProductItem)
+                    .into(ivOrderItem)
             } catch (e: Exception) {
                 Log.i("product image", "product image not found")
             }
-            add.apply {
-                setOnClickListener {
-                    onItemClickListener?.let { it(product) }
-                }
+
+        }
+        holder.itemView.apply {
+            setOnClickListener {
+                onItemClickListener?.let { it(product) }
             }
         }
 
@@ -58,7 +59,4 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(
     }
     override fun getItemCount(): Int {
         return differ.currentList.size
-    }
-
-
-}
+    }}

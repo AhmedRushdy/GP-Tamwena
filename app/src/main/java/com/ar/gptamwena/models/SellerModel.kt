@@ -8,5 +8,6 @@ data class SellerModel(
     var marketName:String,
     var nationalID:String,
     var ownerName:String,
-    var phoneNumber:String
+    var phoneNumber:String,
+    var image:String
     ) : Serializable

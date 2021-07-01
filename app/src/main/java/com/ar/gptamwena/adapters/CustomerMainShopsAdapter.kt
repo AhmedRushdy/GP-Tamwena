@@ -12,6 +12,7 @@ import com.ar.gptamwena.databinding.ItemCstMainStoresBinding
 import com.ar.gptamwena.models.ProductModel
 import com.ar.gptamwena.models.SellerModel
 import com.ar.gptamwena.ui.shopprofile.ShopProfileActivity
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 
 class CustomerMainShopsAdapter() :
@@ -41,8 +42,10 @@ class CustomerMainShopsAdapter() :
             val seller = differ.currentList[position]
 
             holder.binding.apply {
-                itemStoreName.text = seller.ownerName
+                itemStoreName.text = seller.marketName
                 itemStoreLocation.text = seller.marketLocation
+                Glide.with(root).load(seller.image).centerCrop()
+                    .into(itemStorePic)
             }
             holder.itemView.apply {
                 setOnClickListener {

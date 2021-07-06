@@ -24,27 +24,27 @@ class MSFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.c1.setOnClickListener {
-////            findNavController().navigate(R.id.action_MSFragment3_to_detailMSFragment2)
-//        }
-//        binding.c2.setOnClickListener {
-//            findNavController().navigate(R.id.action_MSFragment3_to_detailMSFragment2)
-//        }
-//        binding.c3.setOnClickListener {
-//            findNavController().navigate(R.id.action_MSFragment3_to_detailMSFragment2)
-//        }
-//        binding.c4.setOnClickListener {
-//            findNavController().navigate(R.id.action_MSFragment3_to_detailMSFragment2)
-//        }
-//        binding.c5.setOnClickListener {
-//            findNavController().navigate(R.id.action_MSFragment3_to_detailMSFragment2)
-//        }
-//        binding.c6.setOnClickListener {
-//            findNavController().navigate(R.id.action_MSFragment3_to_detailMSFragment2)
-//        }
-//        binding.c7.setOnClickListener {
-//            findNavController().navigate(R.id.action_MSFragment3_to_detailMSFragment2)
-//        }
+        binding.c1.setOnClickListener {
+            findNavController().navigate(R.id.action_MSFragment_to_detailMSFragment)
+        }
+        binding.c2.setOnClickListener {
+            findNavController().navigate(R.id.action_MSFragment_to_detailMSFragment)
+        }
+        binding.c3.setOnClickListener {
+            findNavController().navigate(R.id.action_MSFragment_to_detailMSFragment)
+        }
+        binding.c4.setOnClickListener {
+            findNavController().navigate(R.id.action_MSFragment_to_detailMSFragment)
+        }
+        binding.c5.setOnClickListener {
+            findNavController().navigate(R.id.action_MSFragment_to_detailMSFragment)
+        }
+        binding.c6.setOnClickListener {
+            findNavController().navigate(R.id.action_MSFragment_to_detailMSFragment)
+        }
+        binding.c7.setOnClickListener {
+            findNavController().navigate(R.id.action_MSFragment_to_detailMSFragment)
+        }
 
 
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.FinishOrderFragment">
+    tools:context=".ui.shopprofile.FinishOrderFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
@@ -114,6 +114,7 @@
                 app:layout_constraintTop_toTopOf="@+id/cname_order">
 
                 <TextView
+                    android:id="@+id/customer_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -137,6 +138,7 @@
                 app:layout_constraintTop_toTopOf="@+id/cid_order">
 
                 <TextView
+                    android:id="@+id/customer_licence"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -161,6 +163,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textView14">
 
                 <TextView
+                    android:id="@+id/customer_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -188,7 +191,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView4"
+        android:id="@+id/final_products_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
@@ -206,7 +209,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginBottom="5dp"
         android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton"
+        app:layout_constraintBottom_toTopOf="@+id/confirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -219,6 +222,7 @@
             android:textSize="18dp" />
 
         <TextView
+            android:id="@+id/customer_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -247,6 +251,7 @@
             android:textSize="18dp" />
 
         <TextView
+            android:id="@+id/total_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -256,7 +261,7 @@
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"

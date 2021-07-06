@@ -21,11 +21,6 @@
         android:label="@string/search_for_market"
         tools:layout="@layout/fragment_near_shops" />
     <fragment
-        android:id="@+id/nav_shopping_history"
-        android:name="com.ar.gptamwena.ui.fragments.ShoppingHistoryFragment"
-        android:label="@string/shopping_history"
-        tools:layout="@layout/fragment_shopping_history" />
-    <fragment
         android:id="@+id/nav_my_account"
         android:name="com.ar.gptamwena.ui.fragments.MyAccountFragment"
         android:label="fragment_my_account"
@@ -35,4 +30,20 @@
         android:name="com.ar.gptamwena.ui.fragments.NearShopsFragment"
         android:label="fragment_my_account"
         tools:layout="@layout/fragment_near_shops" />
+    <fragment
+        android:id="@+id/detailMSFragment"
+        android:name="com.ar.gptamwena.ui.fragments.DetailMSFragment"
+        android:label="DetailMSFragment" />
+    <fragment
+        android:id="@+id/shoppingHistoryFragment"
+        android:name="com.ar.gptamwena.ui.fragments.ShoppingHistoryFragment"
+        android:label="ShoppingHistoryFragment" />
+    <fragment
+        android:id="@+id/MSFragment"
+        android:name="com.ar.gptamwena.ui.fragments.MSFragment"
+        android:label="MSFragment" >
+        <action
+            android:id="@+id/action_MSFragment_to_detailMSFragment"
+            app:destination="@id/detailMSFragment" />
+    </fragment>
 </navigation>

@@ -28,7 +28,7 @@ class SplashPlaceFragment : Fragment() {
 
         binding.checkPlaceGps.setOnClickListener(View.OnClickListener {
            findNavController().navigate(R.id.action_splashPlaceFragment_to_splashRegistrationFragment)
-//
+
 //            SignActivity.fragment = SplashRegistrationFragment()
 //            assert(fragmentManager != null)
 //            val transaction = requireFragmentManager().beginTransaction()

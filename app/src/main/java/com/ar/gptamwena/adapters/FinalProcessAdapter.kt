@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.ar.gptamwena.databinding.ItemCstMainProductsBinding
+import com.ar.gptamwena.databinding.OrderDetailsItemBinding
 import com.ar.gptamwena.databinding.OrderItemBinding
 import com.ar.gptamwena.models.ProductModel
 import com.bumptech.glide.Glide
 
-class CartAdapter: RecyclerView.Adapter<CartAdapter.ProductViewHolder>() {
-    inner class ProductViewHolder(val binding : OrderItemBinding) : RecyclerView.ViewHolder(binding.root)
+class FinalProcessAdapter : RecyclerView.Adapter<FinalProcessAdapter.ProductViewHolder>() {
+    inner class ProductViewHolder(val binding : OrderDetailsItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     private val differCallback = object : DiffUtil.ItemCallback<ProductModel>() {
         override fun areItemsTheSame(oldItem: ProductModel, newItem: ProductModel): Boolean {
@@ -28,7 +28,7 @@ class CartAdapter: RecyclerView.Adapter<CartAdapter.ProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         return ProductViewHolder(
-            OrderItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+            OrderDetailsItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         )
     }
 
@@ -36,29 +36,15 @@ class CartAdapter: RecyclerView.Adapter<CartAdapter.ProductViewHolder>() {
         val product = differ.currentList[position]
 
         holder.binding.apply {
-            tvOrderName.text = product.name
-            tvCount.text = "1"
-            tvOrderPrice.text = product.price
-            try {
-                Glide.with(root).load(product.image)
-                    .into(ivOrderItem)
-            } catch (e: Exception) {
-                Log.i("product image", "product image not found")
-            }
+            tvOrderItemName.text = product.name
+            tvOrderItemNum.text = "1"
+            tvOrderItemPrice.text = product.price
 
         }
-        holder.itemView.apply {
-            setOnClickListener {
-                onItemClickListener?.let { it(product) }
-            }
-        }
+
 
     }
-    private var onItemClickListener: ((ProductModel) -> Unit)? = null
 
-    fun setOnItemClickListener(listener: (ProductModel) -> Unit) {
-        onItemClickListener = listener
-    }
     override fun getItemCount(): Int {
         return differ.currentList.size
     }}

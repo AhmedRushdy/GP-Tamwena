@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.ar.gptamwena.R
 import com.ar.gptamwena.databinding.ActivityShopProfileBinding
+import com.ar.gptamwena.models.CustomerModel
 import com.ar.gptamwena.models.SellerModel
 import com.ar.gptamwena.ui.SharedViewModel
 import com.ar.gptamwena.ui.SharedViewModelProvider
@@ -23,6 +24,7 @@ class ShopProfileActivity : AppCompatActivity() {
     lateinit var sellerObject:SellerModel
     lateinit var viewModel : SharedViewModel
     lateinit var binding : ActivityShopProfileBinding
+    lateinit var customerModel: CustomerModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityShopProfileBinding.inflate(layoutInflater)
@@ -33,6 +35,8 @@ class ShopProfileActivity : AppCompatActivity() {
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
         sellerObject = intent?.getSerializableExtra("seller_object") as SellerModel
+        customerModel = intent?.getSerializableExtra("customerObject") as CustomerModel
+        binding.txtCstShopProfileName.text = sellerObject.marketName
         Glide.with(this).load(sellerObject.image).centerCrop()
             .into(binding.shopIv)
     }

@@ -17,20 +17,17 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
     lateinit var sellerReference: DatabaseReference
     var productsDatabase: FirebaseDatabase
     var sellerList: MutableList<SellerModel> = mutableListOf()
-    var productsCartList: MutableList<ProductModel> = mutableListOf()
+    var writeproductsCartList: MutableList<ProductModel> = mutableListOf()
     var riceList: MutableList<ProductModel> = mutableListOf()
     var oilList: MutableList<ProductModel> = mutableListOf()
     var pastaList: MutableList<ProductModel> = mutableListOf()
     var sugarList: MutableList<ProductModel> = mutableListOf()
     var currentCustomerLic: String = ""
     private lateinit var sellerDatabase: FirebaseDatabase
-
     init {
         productsDatabase = FirebaseDatabase.getInstance()
         sellerDatabase = FirebaseDatabase.getInstance()
         getSellers()
-
-//        getSellerTest()
     }
 
 
@@ -65,11 +62,10 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
     }
 
     fun addToCart(product: ProductModel) {
-        productsCartList.add(product)
+        writeproductsCartList.add(product)
     }
 
     fun getProducts(licence: String, productsCat: String) {
-        currentCustomerLic = licence
         productsReference =
             productsDatabase.getReference("products").child(licence).child(productsCat)
         val productListener = object : ValueEventListener {
@@ -79,8 +75,8 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
                         postSnapshot.child("id").value.toString(),
                         postSnapshot.child("name").value.toString(),
                         postSnapshot.child("image").value.toString(),
-                        postSnapshot.child("quantity").value.toString(),
-                        postSnapshot.child("cost").value.toString()
+                        postSnapshot.child("price").value.toString(),
+                        postSnapshot.child("quantity").value.toString()
                     )
                     when (productsCat) {
                         "pasta" -> pastaList.add(productModel)
@@ -100,14 +96,15 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
         productsReference.addValueEventListener(productListener)
     }
 
-    fun writeProductList() {
+    fun writeProductList(lic:String) {
         val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("cart").child(currentCustomerLic)
-        for (product in productsCartList.iterator()) {
+        val myRef = database.getReference("cart").child(lic)
+        for (product in writeproductsCartList.iterator()) {
             myRef.push().setValue(product)
         }
 
     }
+
 
 
 }

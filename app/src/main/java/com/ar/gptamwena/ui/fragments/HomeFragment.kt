@@ -15,6 +15,7 @@ import com.ar.gptamwena.R
 import com.ar.gptamwena.adapters.CustomerMainProductsAdapter
 import com.ar.gptamwena.adapters.CustomerMainShopsAdapter
 import com.ar.gptamwena.databinding.FragmentHomeBinding
+import com.ar.gptamwena.models.CustomerModel
 import com.ar.gptamwena.models.SellerModel
 import com.ar.gptamwena.ui.DrawerActivity
 import com.ar.gptamwena.ui.SharedViewModel
@@ -35,11 +36,12 @@ class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     lateinit var sellerAdapter: CustomerMainShopsAdapter
     lateinit var sellerList:MutableList<SellerModel>
+    lateinit var customerModel: CustomerModel
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -54,17 +56,14 @@ class HomeFragment : Fragment() {
                 findNavController().navigate(R.id.action_nav_home_to_near_shops)
 
             })
-        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val sdf = SimpleDateFormat("dd/M/yyyy")
         val currentDate = sdf.format(Date())
         binding.txtCstMainDate.text =  currentDate
 
         sellerAdapter.setOnItemClickListener {
-//
-//            val bundle = Bundle().apply {
-//                putSerializable("seller_object", it)
-//            }
             val i = Intent(requireActivity(),ShopProfileActivity::class.java)
             i.putExtra("seller_object",it)
+            i.putExtra("customerObject",(activity as DrawerActivity).customerObject)
             startActivity(i)
         }
         var job: Job? = null

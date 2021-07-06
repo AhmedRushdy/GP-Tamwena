@@ -63,6 +63,7 @@ class ProductsFragment : Fragment() {
             riceAdapter.differ.submitList(viewModel.riceList)
             pastaAdapter.differ.submitList(viewModel.pastaList)
         }
+
         return binding.root
     }
 
@@ -91,8 +92,10 @@ class ProductsFragment : Fragment() {
         }
 
         binding.btnCstAddToCart.setOnClickListener {
-            viewModel.writeProductList()
-//            var i = Intent(requireActivity(),)
+            viewModel.writeProductList((activity as ShopProfileActivity).customerModel.cardNumber)
+            val i = Intent(requireActivity(), BuyProcessActivity::class.java)
+            i.putExtra("customerlic",(activity as ShopProfileActivity).customerModel)
+            startActivity(i)
         }
 
     }

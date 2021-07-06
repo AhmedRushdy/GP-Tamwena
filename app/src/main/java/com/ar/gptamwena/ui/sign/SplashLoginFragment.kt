@@ -26,7 +26,7 @@ class SplashLoginFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSplashLoginBinding.inflate(layoutInflater, container, false)
 
 

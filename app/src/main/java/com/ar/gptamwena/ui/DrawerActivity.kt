@@ -1,5 +1,6 @@
 package com.ar.gptamwena.ui
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -13,9 +14,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.ar.gptamwena.R
 import com.ar.gptamwena.databinding.ActivityDrawerBinding
+import com.ar.gptamwena.models.CustomerModel
+import com.ar.gptamwena.ui.shopprofile.BuyProcessActivity
 
 class DrawerActivity : AppCompatActivity() {
-
+    lateinit var customerObject : CustomerModel
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDrawerBinding
     lateinit var viewModel: SharedViewModel
@@ -25,13 +28,15 @@ class DrawerActivity : AppCompatActivity() {
         binding = ActivityDrawerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.appBarDrawer.toolbar)
+        setSupportActionBar(binding.appBarDrawer.drawerToolbar)
+        binding.appBarDrawer.imageView2.setOnClickListener {
+            var i = Intent(this, BuyProcessActivity::class.java)
+            startActivity(i)
+        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        customerObject = intent.extras?.get("customerData") as CustomerModel
 
-//        binding.appBarDrawer.fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-//        }
+        viewModel.customerModel = customerObject
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -40,7 +45,7 @@ class DrawerActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_search_for_market, R.id.nav_shopping_history,R.id.nav_my_account
+                R.id.nav_home, R.id.near_shops, R.id.nav_shopping_history,R.id.nav_my_account
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

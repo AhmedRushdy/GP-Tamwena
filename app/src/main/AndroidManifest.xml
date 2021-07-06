@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ar.gptamwena" >
+    package="com.ar.gptamwena">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="false"
-        android:theme="@style/Theme.GPTamwena" >
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GPTamwena">
+        <activity android:name=".ui.shopprofile.BuyProcessActivity"></activity>
         <activity
             android:name=".ui.DrawerActivity"
             android:label="@string/title_activity_drawer2"
-            android:theme="@style/Theme.GPTamwena.NoActionBar" >
-
-        </activity>
-        <activity android:name=".ui.shopprofile.ShopProfileActivity" >
-
-        </activity>
-        <activity android:name=".ui.onboarding.StartActivity" >
+            android:theme="@style/Theme.GPTamwena.NoActionBar"></activity>
+        <activity android:name=".ui.shopprofile.ShopProfileActivity"></activity>
+        <activity android:name=".ui.onboarding.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.sign.SignActivity"/>
-        <activity android:name=".ui.CustomerShowShopsActivity"/>
+        <activity android:name=".ui.sign.SignActivity" />
+        <activity android:name=".ui.CustomerShowShopsActivity" />
     </application>
 
 </manifest>

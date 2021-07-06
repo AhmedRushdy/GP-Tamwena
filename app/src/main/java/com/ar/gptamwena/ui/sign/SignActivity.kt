@@ -12,7 +12,6 @@ import com.ar.gptamwena.databinding.ActivitySignCustomerBinding
 class SignActivity : AppCompatActivity() {
     lateinit var loginViewModel: LoginViewModel
     lateinit var binding: ActivitySignCustomerBinding
-    lateinit var video : VideoView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignCustomerBinding.inflate(layoutInflater)
@@ -23,11 +22,6 @@ class SignActivity : AppCompatActivity() {
 
         val uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.splashvid)
         binding.vidSplashScreen.setVideoURI(uri)
-//        fragment = SplashPlaceFragment()
-//        supportFragmentManager.beginTransaction().replace(
-//            R.id.fragment_frame,
-//            fragment!!
-//        ).commit()
     }
 
     private fun initViewModel() {

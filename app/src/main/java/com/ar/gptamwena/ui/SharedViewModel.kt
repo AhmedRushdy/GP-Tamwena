@@ -19,10 +19,12 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
     var sellerList: MutableList<SellerModel> = mutableListOf()
     var writeproductsCartList: MutableList<ProductModel> = mutableListOf()
     var riceList: MutableList<ProductModel> = mutableListOf()
+    var othersList: MutableList<ProductModel> = mutableListOf()
     var oilList: MutableList<ProductModel> = mutableListOf()
     var pastaList: MutableList<ProductModel> = mutableListOf()
     var sugarList: MutableList<ProductModel> = mutableListOf()
     var currentCustomerLic: String = ""
+
     private lateinit var sellerDatabase: FirebaseDatabase
     init {
         productsDatabase = FirebaseDatabase.getInstance()
@@ -83,6 +85,7 @@ class SharedViewModel(private val dispatcher: CoroutineDispatcher) : ViewModel()
                         "oil" -> oilList.add(productModel)
                         "rice" -> riceList.add(productModel)
                         "sugar" -> sugarList.add(productModel)
+                        else -> othersList.add(productModel)
                     }
                 }
 

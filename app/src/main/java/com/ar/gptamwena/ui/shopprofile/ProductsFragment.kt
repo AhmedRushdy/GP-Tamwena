@@ -42,6 +42,7 @@ class ProductsFragment : Fragment() {
         viewModel.getProducts(seller.licenceNumber, "sugar")
         viewModel.getProducts(seller.licenceNumber, "rice")
         viewModel.getProducts(seller.licenceNumber, "pasta")
+        viewModel.getProducts(seller.licenceNumber, "others")
     }
 
     override fun onCreateView(
@@ -62,6 +63,7 @@ class ProductsFragment : Fragment() {
             sugarAdapter.differ.submitList(viewModel.sugarList)
             riceAdapter.differ.submitList(viewModel.riceList)
             pastaAdapter.differ.submitList(viewModel.pastaList)
+            otherAdapter.differ.submitList(viewModel.othersList)
         }
 
         return binding.root
@@ -109,7 +111,7 @@ class ProductsFragment : Fragment() {
         sugarAdapter = ProductsAdapter()
         pastaAdapter = ProductsAdapter()
         riceAdapter = ProductsAdapter()
-//        otherAdapter = ProductsAdapter()
+        otherAdapter = ProductsAdapter()
 
         binding.apply {
             recyclerViewOilCategory.adapter = oilAdapter
@@ -117,9 +119,12 @@ class ProductsFragment : Fragment() {
             recyclerViewPastaCategory.adapter = pastaAdapter
             recyclerViewRiceCategory.adapter = riceAdapter
             recyclerViewSugarCategory.adapter = sugarAdapter
+            recyclerViewOtherCategory.adapter = otherAdapter
 
             recyclerViewOilCategory.layoutManager =
                 LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
+//            recyclerViewOtherCategory.layoutManager =
+//                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
             recyclerViewOtherCategory.layoutManager =
                 LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, true)
             recyclerViewPastaCategory.layoutManager =

@@ -43,14 +43,14 @@ class ShopProfileActivity : AppCompatActivity() {
 
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(AboutUsFragment(), "البيانات")
+//        adapter.addFragment(AboutUsFragment(), "البيانات")
         adapter.addFragment(ProductsFragment(), "المنتجات")
         adapter.addFragment(RateUS(), "تقييم")
         adapter.addFragment(ContactUsFragment(), "ارسل رساله")
 
 
         viewPager.adapter = adapter
-        viewPager.currentItem=3
+        viewPager.currentItem=2
     }
 
     internal inner class ViewPagerAdapter(manager: FragmentManager) :
@@ -59,7 +59,7 @@ class ShopProfileActivity : AppCompatActivity() {
         private val mFragmentTitleList = ArrayList<String>()
 
         override fun getItem(position: Int): Fragment {
-            return mFragmentList[3-position]
+            return mFragmentList[2-position]
         }
 
         override fun getCount(): Int {
@@ -72,7 +72,7 @@ class ShopProfileActivity : AppCompatActivity() {
         }
 
         override fun getPageTitle(position: Int): CharSequence {
-            return mFragmentTitleList[3-position]
+            return mFragmentTitleList[2-position]
         }
     }
     private fun initViewModel(){

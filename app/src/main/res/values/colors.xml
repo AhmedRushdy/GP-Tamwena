@@ -19,4 +19,5 @@
     <color name="gray">#606060</color>
     <color name="background">#F1F1F1</color>
     <color name="green50">#80458766</color>
+    <color name="background50">#40F1F1F1</color>
 </resources>

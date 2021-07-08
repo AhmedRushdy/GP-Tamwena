@@ -10,12 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GPTamwena">
-        <activity android:name=".ui.shopprofile.BuyProcessActivity"></activity>
+        <activity android:name=".ui.shopprofile.BuyProcessActivity" />
         <activity
             android:name=".ui.DrawerActivity"
             android:label="@string/title_activity_drawer2"
-            android:theme="@style/Theme.GPTamwena.NoActionBar"></activity>
-        <activity android:name=".ui.shopprofile.ShopProfileActivity"></activity>
+            android:theme="@style/Theme.GPTamwena.NoActionBar" />
+        <activity android:name=".ui.shopprofile.ShopProfileActivity" />
         <activity android:name=".ui.onboarding.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.sign.SignActivity" />
-        <activity android:name=".ui.CustomerShowShopsActivity" />
+        <activity android:name=".ui.fragments.FinalMSFragment"/>
     </application>
 
 </manifest>

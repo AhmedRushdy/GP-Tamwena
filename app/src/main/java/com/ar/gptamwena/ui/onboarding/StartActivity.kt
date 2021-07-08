@@ -13,12 +13,12 @@ class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
-        val handler = Handler()
-        handler.postDelayed({
-            val intent = Intent(this@StartActivity, SignActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 2000)
+//        val handler = Handler()
+//        handler.postDelayed({
+//            val intent = Intent(this@StartActivity, SignActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//        }, 2000)
 
     }
     }

@@ -1,17 +1,18 @@
 package com.ar.gptamwena.ui.onboarding
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.ar.gptamwena.R
 import com.ar.gptamwena.ui.sign.SignActivity
+
 
 class SplashFragment : Fragment() {
 
@@ -19,7 +20,8 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Handler(Looper.getMainLooper()).postDelayed({
+
+        Handler().postDelayed({
             if (obBoardingCheck()) {
                 val intent = Intent(requireContext(), SignActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP;

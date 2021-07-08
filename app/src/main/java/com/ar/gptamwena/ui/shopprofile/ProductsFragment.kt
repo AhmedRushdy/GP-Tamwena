@@ -97,6 +97,7 @@ class ProductsFragment : Fragment() {
             viewModel.writeProductList((activity as ShopProfileActivity).customerModel.cardNumber)
             val i = Intent(requireActivity(), BuyProcessActivity::class.java)
             i.putExtra("customerlic",(activity as ShopProfileActivity).customerModel)
+            i.putExtra("seller",seller)
             startActivity(i)
         }
 

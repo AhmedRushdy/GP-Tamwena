@@ -20,5 +20,13 @@
         android:label="fragment_finish_order"
         tools:layout="@layout/fragment_finish_order" >
 
+        <action
+            android:id="@+id/action_finishOrderFragment_to_lastFragment"
+            app:destination="@id/lastFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/lastFragment"
+        android:name="com.ar.gptamwena.ui.shopprofile.LastFragment"
+        android:label="fragment_last"
+        tools:layout="@layout/fragment_last" />
 </navigation>

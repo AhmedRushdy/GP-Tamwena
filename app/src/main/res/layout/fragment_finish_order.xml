@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     tools:context=".ui.shopprofile.FinishOrderFragment">
 
     <androidx.cardview.widget.CardView
@@ -18,7 +19,7 @@
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/back2"
+            android:background="@color/background50"
             android:paddingBottom="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="10dp"
-                android:padding="10dp"
+                android:layout_margin="20dp"
                 android:src="@drawable/ic_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -39,6 +40,7 @@
                 android:id="@+id/imageView9"
                 android:layout_width="34dp"
                 android:layout_height="34dp"
+                android:layout_margin="20dp"
                 android:layout_marginTop="0dp"
                 android:src="@drawable/ic_store"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView7"
@@ -49,7 +51,7 @@
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="20dp"
                 android:fontFamily="@font/cairo_bold"
                 android:text="@string/pay_for_order"
                 android:textColor="@color/black"
@@ -67,7 +69,7 @@
                 android:fontFamily="@font/cairo_bold"
                 android:text="الاسم"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="18dp"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -81,7 +83,7 @@
                 android:fontFamily="@font/cairo_bold"
                 android:text="رقم البطاقة"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="18dp"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cname_order" />
@@ -94,20 +96,21 @@
                 android:layout_marginEnd="10dp"
                 android:fontFamily="@font/cairo_bold"
                 android:text="العنوان"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:textColor="@color/black"
-
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cid_order" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView_name"
-                android:layout_width="0dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:padding="5dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
+
                 app:layout_constraintBottom_toBottomOf="@+id/cname_order"
                 app:layout_constraintEnd_toStartOf="@+id/cid_order"
                 app:layout_constraintStart_toStartOf="parent"
@@ -121,13 +124,13 @@
                     android:fontFamily="@font/cairo_regular"
                     android:padding="5dp"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     tools:text="احمد رشدى عيسى" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView3"
-                android:layout_width="0dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 app:cardCornerRadius="20dp"
@@ -145,13 +148,13 @@
                     android:fontFamily="@font/cairo_regular"
                     android:padding="5dp"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     tools:text="2294518515181" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView"
-                android:layout_width="0dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginBottom="5dp"
@@ -170,7 +173,7 @@
                     android:fontFamily="@font/cairo_regular"
                     android:padding="5dp"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     tools:text="بنى سويف" />
             </com.google.android.material.card.MaterialCardView>
 
@@ -196,6 +199,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="10dp"
+        android:layoutDirection="rtl"
         android:layout_marginHorizontal="10dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.ar.gptamwena.R
 import com.ar.gptamwena.models.CustomerModel
 import com.ar.gptamwena.models.ProductModel
+import com.ar.gptamwena.models.SellerModel
 import com.ar.gptamwena.ui.SharedViewModel
 import com.ar.gptamwena.ui.SharedViewModelProvider
 import com.google.firebase.database.DataSnapshot
@@ -22,11 +23,14 @@ class BuyProcessActivity : AppCompatActivity() {
     var productCartList = mutableListOf<ProductModel>()
     var totalPrice: Float = 0.0F
     lateinit var customer:CustomerModel
+    lateinit var seller:SellerModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buy_process)
         initViewModel()
         customer = intent.getSerializableExtra("customerlic") as CustomerModel
+        seller = intent.getSerializableExtra("seller") as SellerModel
+
         viewModel.customerModel = customer
         readCart(customer.cardNumber)
 

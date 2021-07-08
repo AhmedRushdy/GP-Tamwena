@@ -33,7 +33,11 @@
     <fragment
         android:id="@+id/detailMSFragment"
         android:name="com.ar.gptamwena.ui.fragments.DetailMSFragment"
-        android:label="DetailMSFragment" />
+        android:label="DetailMSFragment" >
+<!--        <action-->
+<!--            android:id="@+id/action_detailMSFragment_to_finalMSFragment"-->
+<!--            app:destination="@id/finalMSFragment" />-->
+    </fragment>
     <fragment
         android:id="@+id/shoppingHistoryFragment"
         android:name="com.ar.gptamwena.ui.fragments.ShoppingHistoryFragment"
@@ -46,4 +50,9 @@
             android:id="@+id/action_MSFragment_to_detailMSFragment"
             app:destination="@id/detailMSFragment" />
     </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/finalMSFragment"-->
+<!--        android:name="com.ar.gptamwena.ui.fragments.FinalMSFragment"-->
+<!--        android:label="fragment_final_m_s"-->
+<!--        tools:layout="@layout/fragment_final_m_s" />-->
 </navigation>

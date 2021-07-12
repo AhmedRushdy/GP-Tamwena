@@ -33,4 +33,24 @@
             app:popEnterAnim="@anim/right_to_left"
             app:popExitAnim="@anim/exit_right_to_left"/>
     </fragment>
+    <fragment
+        android:id="@+id/customerRegistrationCardFragment"
+        android:name="com.example.tmkotlin.fragments.CustomerRegistrationCardFragment"
+        android:label="CustomerRegistrationCardFragment" >
+        <action
+            android:id="@+id/action_customerRegistrationCardFragment_to_customerRegistrationFragment"
+            app:destination="@id/customerRegistrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerRegistrationFragment"
+        android:name="com.example.tmkotlin.fragments.CustomerRegistrationFragment"
+        android:label="CustomerRegistrationFragment" />
+    <fragment
+        android:id="@+id/customerRegistrationNumberFragment"
+        android:name="com.example.tmkotlin.fragments.CustomerRegistrationNumberFragment"
+        android:label="CustomerRegistrationNumberFragment" >
+        <action
+            android:id="@+id/action_customerRegistrationNumberFragment_to_customerRegistrationCardFragment"
+            app:destination="@id/customerRegistrationCardFragment" />
+    </fragment>
 </navigation>

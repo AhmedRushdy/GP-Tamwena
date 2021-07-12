@@ -1,5 +1,6 @@
 package com.ar.gptamwena.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.ar.gptamwena.adapters.CustomerMainShopsAdapter
 import com.ar.gptamwena.databinding.FragmentNearShopsBinding
 import com.ar.gptamwena.ui.DrawerActivity
 import com.ar.gptamwena.ui.SharedViewModel
+import com.ar.gptamwena.ui.shopprofile.ShopProfileActivity
 
 class NearShopsFragment : Fragment() {
     private lateinit var sharedViewModel: SharedViewModel
@@ -34,6 +36,12 @@ class NearShopsFragment : Fragment() {
         initRV()
 
         adapter.differ.submitList(sharedViewModel.sellerList)
+        adapter.setOnItemClickListener {
+            val i = Intent(requireActivity(), ShopProfileActivity::class.java)
+            i.putExtra("seller_object", it)
+            i.putExtra("customerObject", (activity as DrawerActivity).customerObject)
+            startActivity(i)
+        }
     }
 
     private fun initRV() {

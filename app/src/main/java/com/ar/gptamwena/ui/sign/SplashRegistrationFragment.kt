@@ -27,21 +27,9 @@ class SplashRegistrationFragment : Fragment() {
         binding.splashLogin.setOnClickListener(View.OnClickListener {
            findNavController().navigate(R.id.action_splashRegistrationFragment_to_splashLoginFragment)
 
-//            SignActivity.fragment = SplashLoginFragment()
-//            assert(fragmentManager != null)
-//            val transaction = requireFragmentManager().beginTransaction()
-//            // transaction.setCustomAnimations(R.anim.left_to_right,R.anim.exit_left_to_right,R.anim.right_to_left,R.anim.exit_right_to_left);
-//            transaction.replace(R.id.fragment_frame, SignActivity.fragment!!)
-//            transaction.addToBackStack(null)
-//            transaction.commit()
         })
         binding.splashSignup.setOnClickListener(View.OnClickListener { view ->
-            startActivity(
-                Intent(
-                    view.context,
-                    DrawerActivity::class.java
-                )
-            )
+//           findNavController().navigate(R.id.action_splashRegistrationFragment_to_customerRegistrationNumberFragment)
         })
         return binding.root
     }

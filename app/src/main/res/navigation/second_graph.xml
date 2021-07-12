@@ -39,7 +39,7 @@
 <!--            app:destination="@id/finalMSFragment" />-->
     </fragment>
     <fragment
-        android:id="@+id/shoppingHistoryFragment"
+        android:id="@+id/nav_shopping_history"
         android:name="com.ar.gptamwena.ui.fragments.ShoppingHistoryFragment"
         android:label="ShoppingHistoryFragment" />
     <fragment

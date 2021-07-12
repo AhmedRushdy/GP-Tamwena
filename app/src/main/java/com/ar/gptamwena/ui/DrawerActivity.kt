@@ -29,10 +29,10 @@ class DrawerActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarDrawer.drawerToolbar)
-        binding.appBarDrawer.imageView2.setOnClickListener {
-            var i = Intent(this, BuyProcessActivity::class.java)
-            startActivity(i)
-        }
+//        binding.appBarDrawer.imageView2.setOnClickListener {
+//            var i = Intent(this, BuyProcessActivity::class.java)
+//            startActivity(i)
+//        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         customerObject = intent.extras?.get("customerData") as CustomerModel
 
